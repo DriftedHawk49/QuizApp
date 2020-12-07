@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+body, html{
+    padding: 0px;
+    margin: 0px;
+}
+
+*{
+    font-family: 'Rubik', sans-serif;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 10px;
+}
+
+.span-col-2{grid-column: span 2 / auto;}
+.span-col-3{grid-column: span 3 / auto;}
+.span-col-4{grid-column: span 4 / auto;}
+.span-col-5{grid-column: span 5 / auto;}
+.span-col-6{grid-column: span 6 / auto;}
+.span-col-7{grid-column: span 7 / auto;}
+.span-col-8{grid-column: span 8 / auto;}
+.span-col-9{grid-column: span 9 / auto;}
+.span-col-10{grid-column: span 10 / auto;}
+.span-col-11{grid-column: span 11 / auto;}
+.span-col-12{grid-column: span 12 / auto;}

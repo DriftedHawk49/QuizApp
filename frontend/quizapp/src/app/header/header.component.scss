@@ -1,0 +1,48 @@
+$lblack : #444444;
+$dblack : #2A2A2A;
+$green : #31C820;
+$dblue : #4742EC;
+$orange : #EB673D;
+$red : #FF3939;
+$lblue : #426AEC;
+
+
+
+
+
+.header-container{
+
+    margin-top: 20px;
+
+    .logo{
+        font-size: 30px;
+        font-weight: 500;
+        color: $dblack;
+    }
+
+    .link-container{
+        text-align: right;
+
+        .name-display{
+            padding: 9px 20px;
+            border: 1px solid $lblack;
+            border-radius: 40px;
+            font-size: 15px;
+            margin-right: 60px;
+        }
+
+        .logout-btn{
+            background-color: white;
+            border: none;
+            color: $lblack;
+            font-size: 20px;
+            cursor: pointer;
+
+            &:hover{
+                color: black;
+                border-bottom : 1px solid $lblack;
+            }
+        }
+    }
+
+}
