@@ -12,6 +12,7 @@ import { QuizgameComponent } from './actualquiz/quizgame/quizgame.component';
 import { ResultsComponent } from './actualquiz/results/results.component';
 import { HeaderComponent } from './header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { QuizgameService } from './quizgame.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [QuizgameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

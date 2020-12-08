@@ -1,0 +1,35 @@
+$lblack : #444444;
+$dblack : #2A2A2A;
+$green : #31C820;
+$dblue : #4742EC;
+$dblueselect : #3733BE;
+$orangeselect : #B74F2E;
+$orange : #EB673D;
+$red : #FF3939;
+$lblue : #426AEC;
+
+.max-score-display{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 0px;
+    color: $dblue;
+    margin-bottom: 30px;
+}
+
+.btn-container{
+    text-align: center;
+}
+
+.start-game-btn{
+    padding: 15px 50px;
+    border-radius: 50px;
+    border: none;
+    background-color: $green;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+
+    &:hover{
+        background-color: green;
+    }
+}

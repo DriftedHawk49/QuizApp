@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-startquiz',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartquizComponent implements OnInit {
 
-  constructor() { }
+  @Output() GameStageChangeEvent = new EventEmitter<number>();
 
+  constructor() { }
+  maxScore: Number = 0;
   ngOnInit(): void {
+  }
+
+  startgame(){
+    this.GameStageChangeEvent.emit(1);
   }
 
 }

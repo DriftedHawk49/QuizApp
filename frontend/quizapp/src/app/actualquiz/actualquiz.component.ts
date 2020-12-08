@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { QuizgameService } from '../quizgame.service';
+
 
 @Component({
   selector: 'app-actualquiz',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActualquizComponent implements OnInit {
 
-  constructor() { }
+  constructor(private quizEngine : QuizgameService) { }
+
+  gameStage = 0;
 
   ngOnInit(): void {
+    this.gameStage = this.quizEngine.getQuizStage();
   }
 
 }

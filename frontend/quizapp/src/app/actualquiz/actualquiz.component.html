@@ -1,1 +1,6 @@
-<p>actualquiz works!</p>
+
+
+<!-- Add Event Output -->
+<app-startquiz *ngIf = "!this.gameStage"></app-startquiz>
+<app-quizgame *ngIf = "this.gameStage==1"></app-quizgame>
+<app-results *ngIf= "this.gameStage == 2" ></app-results>
