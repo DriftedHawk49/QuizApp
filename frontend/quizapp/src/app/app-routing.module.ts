@@ -19,6 +19,12 @@ const routes: Routes = [
   },{
     path: "actualquiz",
     component: ActualquizComponent
+  },{
+    path: "signup/login",
+    redirectTo: "login"
+  },{
+    path: "login/signup",
+    redirectTo: "signup"
   }
 ];
 

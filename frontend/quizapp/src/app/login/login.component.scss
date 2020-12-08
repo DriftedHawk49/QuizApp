@@ -7,3 +7,67 @@ $orangeselect : #B74F2E;
 $orange : #EB673D;
 $red : #FF3939;
 $lblue : #426AEC;
+
+
+form{
+    width: 400px;
+    margin: 0px auto;
+
+    .input-container{
+        margin-bottom: 20px;
+        label{
+            display: block;
+            font-size: 18px;
+            margin-bottom: 5px;
+            &:after{
+                content: " *";
+                color: $red;
+            }
+        }
+        
+        input{
+            height: 50px;
+            width: 400px;
+            font-size: 20px;
+            border-radius: 5px;
+            border: 1px solid $lblack;
+        }
+    }
+
+    button{
+        height: 50px;
+        width: 200px;
+        font-size: 18px;
+        border-radius: 100px;
+        border: none;
+        color: white;
+        background-color: $dblue;
+        margin: 0px auto;
+        display: block;
+        cursor: pointer;
+        &:hover{
+            background-color: $dblueselect;
+        }
+    }
+
+    .signup-prompt{
+        text-align: center;
+        display: block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: $dblue;
+        cursor: pointer;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.error-message{
+    background-color: #FFEFEF;
+    color: $red;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+}

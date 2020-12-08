@@ -1,1 +1,42 @@
-<p>signup works!</p>
+
+<h1 class="main-heading">Signup</h1>
+
+<form [formGroup] = "signupForm" (ngSubmit)="onSubmit()">
+
+    <div class="input-container">
+        <label for="name">Name </label>
+        <input type="text" required formControlName="name" id="name">
+        <p class="error-message" *ngIf = "name.invalid&&name.touched">
+            Required Field.<br>
+        </p>
+    </div>
+    <div class="input-container">
+        <label for="email">Email </label>
+        <input type="email" required formControlName="email" id="email">
+        <p class="error-message" *ngIf = "email.invalid&&email.touched">
+            Required Field.<br> Enter Correct Email Format.
+        </p>
+    </div>
+    <div class="input-container">
+        <label for="pass">Password </label>
+        <input type="password" required minlength="6" maxlength="25" formControlName="password" id="pass">
+        <p class="error-message" *ngIf = "password.invalid&&password.touched">
+            Required Field.<br> Minimum length = 6, Maximum length = 25
+        </p>
+    </div>
+    <div class="input-container">
+        <label for="repass">Repeat Password </label>
+        <input type="password" required minlength="6" maxlength="25" formControlName="repeatPassword" id="repass">
+        <p class="error-message" *ngIf = "repeatPassword.invalid&&repeatPassword.touched">
+            Required Field.<br> Minimum length = 6, Maximum length = 25
+        </p>
+        <p class="error-message" *ngIf = "!passwordSame">
+            Both password fields should match.
+        </p>
+    </div>
+    
+    
+    <button type="submit">Sign up</button>
+    <a class="login-prompt" routerLink="login">Already have an account? Login</a>
+
+</form>

@@ -1,1 +1,24 @@
-<p>login works!</p>
+
+<h1 class="main-heading">Login</h1>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <div class="input-container">
+        <label for="email">Email</label>
+        <input type="email" required formControlName="email" id="email">
+        <p class="error-message" *ngIf = "email.invalid&&email.touched"> 
+            Required Field.<br>Enter Email in correct format.
+        </p>
+    </div>
+    
+    <div class="input-container">
+        <label for="password">Password</label>
+        <input type="password" required maxlength="25" minlength="6" formControlName="password" id="password">
+        <p class="error-message" *ngIf = "password.invalid&&password.touched"> 
+            Required Field.<br>Min Length = 6, Max Length = 25.
+        </p>
+    </div>
+
+    <button type="submit">Login</button>
+    <a routerLink="signup" class="signup-prompt">Don't have an account? Sign up</a>
+</form>

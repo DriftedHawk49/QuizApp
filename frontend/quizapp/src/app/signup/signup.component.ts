@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -9,27 +9,39 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 export class SignupComponent implements OnInit {
 
   signupForm: FormGroup;
-  submitted = false;
+  passwordSame = true;
 
-  constructor(private formBuilder: FormBuilder) { }
+  checkPasswords(p1: String, p2:String){
+    return(p1==p2);
+  }
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.signupForm = this.formBuilder.group({
-      name : ['', Validators.required],
-      email : ['',Validators.required, Validators.email],
-      password : ['',Validators.required, Validators.minLength(6), Validators.maxLength(25)],
-      repeatPassword : ['', Validators.required, Validators.minLength(6), Validators.maxLength(25)]
+    this.signupForm = new FormGroup({
+      name : new FormControl('', [Validators.required]),
+      email : new FormControl('',[Validators.required, Validators.email]),
+      password : new FormControl('',[Validators.required, Validators.minLength(6), Validators.maxLength(25)]),
+      repeatPassword : new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(25)])
     });
 
   }
 
-
+  get name() {return this.signupForm.get('name')};
+  get email() {return this.signupForm.get('email')};
+  get password() {return this.signupForm.get('password')};
+  get repeatPassword() {return this.signupForm.get('repeatPassword')};
 
   onSubmit(){
     if(this.signupForm.invalid){
-      alert("Please rectify all form errors.");
+      alert("Please fill the form/rectify all errors.");
     }else{
-      
+      if(this.checkPasswords(this.signupForm.value.password, this.signupForm.value.repeatPassword)){
+        // Call API To register
+
+      }else{
+        this.passwordSame = false;
+      }
     }
   }
 

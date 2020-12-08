@@ -1,4 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+$lblack : #444444;
+$dblack : #2A2A2A;
+$green : #31C820;
+$dblue : #4742EC;
+$dblueselect : #3733BE;
+$orangeselect : #B74F2E;
+$orange : #EB673D;
+$red : #FF3939;
+$lblue : #426AEC;
 
 body, html{
     padding: 0px;
@@ -7,6 +16,7 @@ body, html{
 
 *{
     font-family: 'Rubik', sans-serif;
+    box-sizing: border-box;
 }
 
 .grid{
@@ -26,3 +36,11 @@ body, html{
 .span-col-10{grid-column: span 10 / auto;}
 .span-col-11{grid-column: span 11 / auto;}
 .span-col-12{grid-column: span 12 / auto;}
+
+.main-heading{
+    font-weight: 500;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 100px;
+    color: $lblack;
+}
